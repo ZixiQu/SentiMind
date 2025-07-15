@@ -29,15 +29,25 @@ python UI.py
 
 This will start a local server and provide a URL, where you can interact with the emotion classification demo.
 
-## Poster
-
-![poster](assets/poster.png)
-
 
 
 ## Technologies
 
+![1508 architecture](assets/architecture.png)
 
+The input sentences undergo a pre-trained encoder-based transformer network to generate context-aware word embeddings. These embeddings are processed in parallel through two CNN branches with distinct kernel sizes: a 2-word convolutional filter and a 4-word convolutional filter. Each CNN pathway incorporates standard regularization techniques including batch normalization and dropout layers to prevent overfitting. The feature maps from both convolutional branches are concatenated into a unified representation vector, which is then fed through a fully connected classification network. Notably, the output layer employs sigmoid activation instead of softmax to enable multi-label classification capability.
+
+
+
+## Model Evaluation
+
+The system was publicly released to University of Toronto students for real-world testing. Participants were invited to:
+
+1. Submit arbitrary text inputs to the model
+2. Review the generated emotion classifications
+3. Respond with the satisfaction level of the generated result.
+
+From over 300 collected trial responses, the model demonstrated **over 85% success rate** in accurate emotion recognition.
 
 
 
@@ -45,8 +55,8 @@ This will start a local server and provide a URL, where you can interact with th
 
 Sample model inference that demonstrate the performance of the model. Inputs are randomly picked from r/uoft comments.
 
-![2emotions](C:\Users\Administrator\Desktop\SentiMind\assets\2emotions.png)
+![2emotions](assets/2emotions.png)
 
-![Curiosity](C:\Users\Administrator\Desktop\SentiMind\assets\Curiosity.png)
+![Curiosity](assets/Curiosity.png)
 
-![Gratitude](C:\Users\Administrator\Desktop\SentiMind\assets\Gratitude.png)
+![Gratitude](assets/Gratitude.png)
